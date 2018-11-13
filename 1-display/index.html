@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>display</title>
+  <style media="screen">
+    .relative-container {
+      position: relative;
+    }
+
+    #container {
+      width: 600px;
+      height: 300px;
+      background-color: #444;
+      color: #fff;
+    }
+
+    /* <!-- top --> */
+    .top-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .top-middle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .top-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+/* <!-- middle --> */
+    .middle-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0,-50%);
+    }
+    .middle-middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .middle-right {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0,-50%);
+    }
+
+    /* <!-- bottom --> */
+    .bottom-left {
+      position: absolute;
+      bottom:0;
+      left: 0;
+    }
+    .bottom-middle {
+      position: absolute;
+      bottom:0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .bottom-right {
+      position: absolute;
+      bottom:0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='container' class="relative-container">
+    <div class="top-left">
+      top-left
+    </div>
+    <div class="top-middle">
+      top-middle
+    </div>
+    <div class="top-right">
+      top-right
+    </div>
+    <div class="middle-left">
+      top-left
+    </div>
+    <div class="middle-middle">
+      top-middle
+    </div>
+    <div class="middle-right">
+      top-right
+    </div>
+    <div class="bottom-left">
+      top-left
+    </div>
+    <div class="bottom-middle">
+      top-middle
+    </div>
+    <div class="bottom-right">
+      top-right
+    </div>
+  </div>
+<br>
+
+<div id='container' class="relative-container">
+    <img src="https://unsplash.it/600/300?image=978" width='600' height="300" alt="bg">
+  <div class="top-left">
+    top-left
+  </div>
+  <div class="top-middle">
+    top-middle
+  </div>
+  <div class="top-right">
+    top-right
+  </div>
+  <div class="middle-left">
+    top-left
+  </div>
+  <div class="middle-middle">
+    top-middle
+  </div>
+  <div class="middle-right">
+    top-right
+  </div>
+  <div class="bottom-left">
+    top-left
+  </div>
+  <div class="bottom-middle">
+    top-middle
+  </div>
+  <div class="bottom-right">
+    top-right
+  </div>
+</div>
+
+
+</body>
+
+</html>

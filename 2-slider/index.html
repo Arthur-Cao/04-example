@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style media="screen">
+  .container1{
+      max-width:600px;
+    }
+    img{
+      width:100%;
+      height:auto;
+    }
+    .relative-container{
+      position:relative;
+    }
+    .middle-left{
+      position: absolute;
+      top:50%;
+      left:0;
+      transform:translate(0, -50%);
+    }
+    .middle-right{
+      position: absolute;
+      top:50%;
+      right:0;
+      transform:translate(0, -50%);
+    }
+    .button{
+      border:none;
+      background-color:black;
+      color:#fff;
+      padding:5px 10px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .button:hover{
+     background-color:#ccc;
+     color:black;
+    }
+
+    .row::after, .row::before {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .col {
+      float: left;
+    }
+
+    .l1 {
+      width: 8.33%
+    }
+
+    .l2 {
+      width: 16.66%
+    }
+
+    .l3 {
+      width: 25%
+    }
+
+    .l4 {
+      width: 33.33%
+    }
+
+    .l5 {
+      width: 41.66%
+    }
+
+    .l6 {
+      width: 50%
+    }
+
+    .l7 {
+      width: 58.33%
+    }
+
+    .l8 {
+      width: 66.66%
+    }
+
+    .l9 {
+      width: 75%
+    }
+
+    .l10 {
+      width: 83.33%
+    }
+
+    .l11 {
+      width: 91.66%
+    }
+
+    .l12 {
+      width: 100%
+    }
+
+    @media only screen and (max-width: 993px) {
+      .m1 {
+        width: 8.33%
+      }
+
+      .m2 {
+        width: 16.66%
+      }
+
+      .m3 {
+        width: 25%
+      }
+
+      .m4 {
+        width: 33.33%
+      }
+
+      .m5 {
+        width: 41.66%
+      }
+
+      .m6 {
+        width: 50%
+      }
+
+      .m7 {
+        width: 58.33%
+      }
+
+      .m8 {
+        width: 66.66%
+      }
+
+      .m9 {
+        width: 75%
+      }
+
+      .m10 {
+        width: 83.33%
+      }
+
+      .m11 {
+        width: 91.66%
+      }
+
+      .m12 {
+        width: 100%
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .s1 {
+        width: 8.33%
+      }
+
+      .s2 {
+        width: 16.66%
+      }
+
+      .s3 {
+        width: 25%
+      }
+
+      .s4 {
+        width: 33.33%
+      }
+
+      .s5 {
+        width: 41.66%
+      }
+
+      .s6 {
+        width: 50%
+      }
+
+      .s7 {
+        width: 58.33%
+      }
+
+      .s8 {
+        width: 66.66%
+      }
+
+      .s9 {
+        width: 75%
+      }
+
+      .s10 {
+        width: 83.33%
+      }
+
+      .s11 {
+        width: 91.66%
+      }
+
+      .s12 {
+        width: 100%
+      }
+    }
+
+
+    .container2{
+      max-width:600px;
+    }
+
+    * {
+      -moz-box-sizing: border-box;
+       box-sizing: border-box;
+    }
+
+    .padding{
+      display:inlne-block;
+      padding:4px;
+    }
+    .point{
+      cursor:pointer;
+      opacity:0.7;
+    }
+    .container3{
+      max-width:600px;
+    }
+
+    /* animation */
+    .animate-bottom {
+      position: relative;
+      animation-name: animaionbottom;
+      animation-duration: 1s;
+      -webkit-animation-name: animaionbottom;
+      -webkit-animation-duration: 1s;
+      < !-- animation-iteration-count: infinite;
+      -->
+    }
+
+    @keyframes animaionbottom {
+      /* 0%: { transform: translateY(-300px); opacity: 0; }
+      25% { transform: translateY(-200px); opacity: 0.33;}
+      50% { transform: translateY(-100px); opacity: 0.66;}
+      75% { transform: translateY(0); opacity: 1;}
+    } */
+      from {
+        bottom: -300px;
+        opacity: 0;
+      }
+
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes animaionbottom {
+      from {
+        bottom: -300px;
+        opacity: 0;
+      }
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+
+    .animate-opacity {
+      position: relative;
+      animation-name: animaionopacity;
+      animation-duration: 0.8s;
+      -webkit-animation-name: animaionopacity;
+      -webkit-animation-duration: 0.8s;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+
+    @keyframes animaionopacity {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(359deg);
+      }
+    }
+
+    @-webkit-keyframes animaionopacity {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* 缩放 */
+    .animate-zoom {
+      position: relative;
+      animation-name: animaionzoom;
+      -webkit-animation-name: animaionzoom;
+      -ms-animation-duration: 2s;
+      -webkit-animation-duration: 2s;
+    }
+
+    @keyframes animaionzoom {
+      0% {
+        transform:scale(0);
+      }
+
+      50% {
+        transform:scale(0.5);
+      }
+
+      100% {
+      transform:scale(1);
+      }
+    }
+
+    @-webkit-keyframes animaionzoom {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        transform: scale(0.5);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+  </style>
+
+<body>
+  <h2>手动滚动</h2>
+  <div class="container1 relative-container">
+    <img src="https://unsplash.it/900/450?image=962" class='slide' width="900" height="450" alt="">
+    <img style="display:none" src="https://unsplash.it/900/450?image=974" class='slide' width="900" height="450" alt="">
+    <img style="display:none" src="https://unsplash.it/900/450?image=973" class='slide' width="900" height="450" alt="">
+    <button class="button middle-left" onclick="go(-1)">&#60</button>
+    <button class="button middle-right" onclick="go(1)">&#62</button>
+  </div>
+
+  <h2>图片导航</h2>
+  <div class="container2 relative-container">
+    <img src="https://unsplash.it/900/450?image=962" class='slide2' width="900" height="450" alt="">
+    <img style="display:none" src="https://unsplash.it/900/450?image=974" class='slide2' width="900" height="450" alt="">
+    <img style="display:none" src="https://unsplash.it/900/450?image=973" class='slide2' width="900" height="450" alt="">
+    <div class="row">
+      <div class="col l4 padding">
+        <img src="https://unsplash.it/200/100?image=962" class='point' width="200" height="100" onclick="goto(0)" alt="">
+      </div>
+      <div class="col l4 padding">
+        <img src="https://unsplash.it/200/100?image=974" class='point' width="200" height="100" onclick="goto(1)" alt="">
+      </div>
+      <div class="col l4 padding">
+        <img src="https://unsplash.it/200/100?image=973" class='point' width="200" height="100" onclick="goto(2)" alt="">
+      </div>
+    </div>
+  </div>
+
+<h2> 自动播放</h2>
+<div class="container3 relative-container">
+  <img src="https://unsplash.it/900/450?image=962" class='slide3 animate-bottom' width="900" height="450" alt="">
+  <img style="display:none" src="https://unsplash.it/900/450?image=974" class='slide3 animate-opacity' width="900" height="450" alt="">
+  <img style="display:none" src="https://unsplash.it/900/450?image=973" class='slide3 animate-zoom' width="900" height="450" alt="">
+
+</div>
+  <script type="text/javascript">
+    var index = 1;
+
+    function hideAll(num) {
+      var sliders = document.getElementsByClassName('slide');
+      for (var i = 0; i < sliders.length; i++) {
+        sliders[i].style.display = 'none';
+      }
+      if (num == 0) {
+        index=0;
+        if (index < 1) {
+          index = 3;
+        }
+      } else {
+        index++;
+        if (index > sliders.length) {
+          index = 1;
+        }
+      }
+    }
+
+    // function page(num){
+    //   if(num==-1){
+    //     index --;
+    //     if(index<1){
+    //       index=3;
+    //     }
+    //   }else{
+    //     index++;
+    //     if(index>3){
+    //       index=1;
+    //     }
+    //   }
+    // }
+    function go(num) {
+      var sliders = document.getElementsByClassName('slide');
+      hideAll(num);
+      // page(num);
+      sliders[index - 1].style.display = 'block';
+    }
+
+    // <!-- navigation by image -->
+    function points(num){
+        var points = document.getElementsByClassName('point');
+        for (var i = 0; i < points.length; i++) {
+          points[i].style.opacity = 0.7;
+        }
+        points[num].style.opacity = 1;
+    }
+    function goto(num){
+      var sliders = document.getElementsByClassName('slide2');
+
+      for (var i = 0; i < sliders.length; i++) {
+        sliders[i].style.display = 'none';
+      }
+      if (num == 0) {
+        index=0;
+      } else if(num==1){
+        index=1;
+      }else{
+        index=2;
+      }
+      sliders[index].style.display = "block";
+      points(num);
+    }
+
+
+    <!-- play automatocally -->
+    var index3=0;
+    autoPlay();
+    function autoPlay(){
+      var sliders = document.getElementsByClassName('slide3');
+      for (var i = 0; i < sliders.length; i++) {
+        sliders[i].style.display = 'none';
+      }
+      var tem = index3%3;
+      sliders[tem].style.display = 'block';
+      index3++;
+      setTimeout(autoPlay,3000);
+    }
+    <!-- setTimeout(autoPlay,3000); -->
+  </script>
+</body>
+
+</html>

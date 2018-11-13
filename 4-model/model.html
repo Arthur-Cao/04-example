@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Model</title>
+  <style media="screen">
+    *,*::before,*::after{
+      box-sizing:border-box;
+    }
+    .hover-shadow:hover {
+      box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.2), 0 4px 20px 0 rgb(0, 0, 0, 0.18);
+      -webkit-box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.2), 0 4px 20px 0 rgb(0, 0, 0, 0.18);
+      -moz-box-shadow: 0 4px 10px 0 rgb(0, 0, 0, 0.2), 0 4px 20px 0 rgb(0, 0, 0, 0.18);
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .button {
+      border: none;
+      font-size: 14px;
+      color: #fff;
+      padding: 8px 16px;
+      background-color: #444;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+    }
+    .model{
+      background-color:rgba(0,0,0,0.3);
+      position:fixed;
+      bottom:0;
+      top:0;
+      left:0;
+      right:0;
+      z-index=3;
+      overflow: auto;
+      display: none;
+    }
+    .model-dialog{
+      margin:32px 0;
+    }
+    .model-content{
+      background-color:#fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+      border-radius: 5px;
+      box-shadow: 0 4px 30px 0 rgba(0,0,0,0.3), 0 5px 30px 0 rgba(0,0,0,0.3);
+    }
+    img{
+      height: auto;
+      width: 100%;
+    }
+    .model-dialog::after{
+      content: '';
+      clear: both;
+      display: table;
+    }
+    .model-title{
+      font-size: 20px;
+      font-weight: 400px;
+      display: inline-block;
+    }
+    .close-btn{
+      float: right;
+      border: none;
+      background-color: transparent;
+      color: #000;
+      font-size: 24px;
+      font-weight: 400;
+      cursor: pointer;
+      padding: 0;
+    }
+    .close-btn:hover{
+      color:#e88e8e;
+    }
+    .model-inner{
+      font-size: 14px;
+    }
+    .model-footer{
+      text-align: right;
+    }
+    .close-btn,.ok-btn{
+      border:none;
+      background-color: transparent;
+      color:#e88e8e;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    /* 缩放 */
+    .animate-zoom {
+      position: relative;
+      animation-name: animaionzoom;
+      -webkit-animation-name: animaionzoom;
+      -ms-animation-duration: 0.6s;
+      -webkit-animation-duration: 0.6s;
+    }
+
+    @keyframes animaionzoom {
+      0% {
+        transform: scale(0);
+      }
+
+      25% {
+        transform: scale(0.25);
+      }
+
+      50% {
+        transform: scale(0.5);
+      }
+
+      75% {
+        transform: scale(0.75);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes animaionzoom {
+      0% {
+        transform: scale(0);
+      }
+
+      25% {
+        transform: scale(0.25);
+      }
+
+      50% {
+        transform: scale(0.5);
+      }
+
+      75% {
+        transform: scale(0.75);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+    .closeAnimate-zoom {
+      position: relative;
+      animation-name: closeAnimaionzoom;
+      -webkit-animation-name: closeAnimaionzoom;
+      -ms-animation-duration: 0.6s;
+      -webkit-animation-duration: 0.6s;
+    }
+
+    @keyframes closeAnimaionzoom {
+      0% {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(0.75);
+      }
+
+      50% {
+        transform: scale(0.5);
+      }
+
+      75% {
+        transform: scale(0.25);
+      }
+
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    @-webkit-keyframes closeAnimaionzoom {
+      0% {
+        transform: scale(1);
+      }
+
+      25% {
+        transform: scale(0.75);
+      }
+
+      50% {
+        transform: scale(0.5);
+      }
+
+      75% {
+        transform: scale(0.25);
+      }
+
+      100% {
+        transform: scale(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="button hover-shadow" onclick="openModel()">Open Model</button>
+    <div id='model' class="model">
+      <div class="model-dialog">
+        <div id="model-content" class="model-content animate-zoom">
+          <div class="model-heading">
+            <h2 class="model-title">Model Title</h2>
+            <button class="close-btn" onclick="closeModel()">x</button>
+          </div>
+          <div class="model-inner">
+            <p>Mesopropithecus was a lemur from Madagascar, slightly larger than any of those alive today, but one of the smallest that are known only from subfossil remains. This genus of the sloth lemur family Palaeopropithecidae includes the
+              species M. dolichobrachion, M. globiceps, and M. pithecoides. All three species were primarily leaf-eaters, but also ate fruit and seeds. M. globiceps ate more seeds than M. pithecoides, and an analysis of the teeth of M.
+              dolichobrachion suggests that it ate even more seeds; it also had distinctly longer arms. </p>
+            <img src="https://unsplash.it/900/500?image=1067" width='900' height='500' alt="">
+            <p>Mesopropithecus was a lemur from Madagascar, slightly larger than any of those alive today, but one of the smallest that are known only from subfossil remains. This genus of the sloth lemur family Palaeopropithecidae includes the
+              species M. dolichobrachion, M. globiceps, and M. pithecoides. All three species were primarily leaf-eaters, but also ate fruit and seeds. M. globiceps ate more seeds than M. pithecoides, and an analysis of the teeth of M.
+              dolichobrachion suggests that it ate even more seeds; it also had distinctly longer arms. </p>
+          </div>
+          <div class="model-footer">
+            <button class="ok-btn">OK</button>
+            <button class="close-btn" onclick="closeModel()">CLOSE</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function openModel(){
+      var model=document.getElementById('model');
+      var modelcontent=document.getElementById('model-content');
+      modelcontent.className=modelcontent.className.replace('closeAnimate-zoom','animate-zoom');
+      setTimeout(function(){
+        model.style.display="block";
+      },600)
+
+    }
+    function closeModel(){
+      var model=document.getElementById('model');
+
+      var modelcontent=document.getElementById('model-content');
+      modelcontent.className=modelcontent.className.replace('animate-zoom','closeAnimate-zoom');
+      setTimeout(function(){
+        model.style.display="none";
+      },600)
+    }
+  </script>
+</body>
+
+</html>
